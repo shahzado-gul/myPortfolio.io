@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic Page Needs -->
+    <meta charset="utf-8">
+    <title>Shahzado-Gul</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/stellarnav.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/png" href="img/favicon.ico">
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+    <style>
+        /* Add styles for the glowing circle around the image */
+        #profile-img-container {
+            position: relative;
+            top: 100px;
+            left: 8vw;
+            display: inline-block;
+            padding: 10px; /* For spacing around the image */
+        }
+
+        #profile-img {
+            border-radius: 50%;
+            width: 400px;
+            height: 400px;
+        }
+
+        /* Glowing circle style */
+        .glowing-circle {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 5px solid #00ff99;
+            animation: glow 1.5s infinite alternate;
+            opacity: 0.6;
+        }
+
+        /* Glowing effect */
+        @keyframes glow {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 15px rgba(0, 255, 153, 0.5);
+            }
+
+            100% {
+                transform: scale(1.1);
+                box-shadow: 0 0 25px rgba(0, 255, 153, 1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="preloader"></div>
+    <header>
+        <div class="header-container container">
+            <div class="stellarnav">
+                <ul>
+                    <li><a class="active" href="index.html"><img src="img/menu-1.png" alt=""></a></li>
+                    <li><a href="about.html"><img src="img/menu-2.png" alt=""></a></li>
+                    <li><a href="resume.html"><img src="img/menu-3.png" alt=""></a></li>
+                    <li><a href="service.html"><img src="img/menu-4.png" alt=""></a></li>
+                    <li><a href="projects.html"><img src="img/menu-5.png" alt=""></a></li>
+                    <li><a href="latest-news.html"><img src="img/menu-6.png" alt=""></a></li>
+                    <li class="drop-left"><a href="contact-us.html"><img src="img/menu-7.png" alt=""></a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="hero-content-area">
+        <div class="container">
+            <div class="hero-content-container border-radius-15">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div id="profile-img-container">
+                            <!-- Circle Glowing Effect -->
+                            <div class="glowing-circle" id="glow-circle"></div>
+                            <!-- Profile Image -->
+                            <img id="profile-img" src="./img/1724790530058-removebg-preview.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-12 d-flex align-items-center">
+                        <div class="home-content">
+                            <h2 id="intro" class="intro">Hi, I'm</h2>
+                            <h1 id="name" class="author-name">Shahzado Gul</h1>
+                            <p id="info" class="info">A professional Web Developer</p>
+                            <div class="buttons">
+                                <a href="#" class="button-1" id="download-cv-btn">Download My CV <span class="icon"><i class="fas fa-download"></i></span></a>
+                                <a href="#" class="button-1" id="contact-me-btn">Contact Me <span class="icon"><i class="fas fa-arrow-right"></i></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/countdown.js"></script>
+    <script src="js/stellarnav.min.js"></script>
+    <script src="js/jquery.scrollUp.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/theme.js"></script>
+
+    <!-- GSAP Animations for Profile Image, Buttons, and Glowing Circle -->
+    <script>
+        // Profile image animation: Scale and fade-in
+        gsap.from("#profile-img", {
+            opacity: 0,
+            scale: 0.5,
+            duration: 1.5,
+            delay: 0.5,
+            ease: "power2.out",
+        });
+
+        // Glowing Circle Animation
+        gsap.from(".glowing-circle", {
+            opacity: 0,
+            scale: 0.8,
+            duration: 1.5,
+            delay: 0.5,
+            ease: "power2.out",
+        });
+
+        // Animate text: Intro, name, and info
+        gsap.from("#intro", { opacity: 0, duration: 1, x: -100, ease: "power2.out" });
+        gsap.from("#name", { opacity: 0, duration: 1, delay: 0.5, y: 100, ease: "power2.out" });
+        gsap.from("#info", { opacity: 0, duration: 1, delay: 1, y: 50, ease: "power2.out" });
+    </script>
+</body>
+
+</html>
